@@ -2,27 +2,27 @@ module.exports = {
   User: require("./user")
 };
 
-//Connect to Mongo database
-const mongoose = require('mongoose')
-mongoose.Promise = global.Promise
+// //Connect to Mongo database
+// const mongoose = require('mongoose')
+// mongoose.Promise = global.Promise
 
-//your local database url
-//27017 is the default mongoDB port
-const uri = 'mongodb://localhost:27017/Project3' 
+// //your local database url
+// //27017 is the default mongoDB port
+// const uri = 'mongodb://localhost:27017/newusers' 
 
-mongoose.connect(uri).then(
-    () => { 
-        /** ready to use. The `mongoose.connect()` promise resolves to undefined. */ 
-        console.log('Connected to Mongo');
+// mongoose.connect(uri).then(
+//     () => { 
+//         /** ready to use. The `mongoose.connect()` promise resolves to undefined. */ 
+//         console.log('Connected to Mongo from models/index.js');
         
-    },
-    err => {
-         /** handle initial connection error */ 
-         console.log('error connecting to Mongo: ')
-         console.log(err);
+//     },
+//     err => {
+//          /** handle initial connection error */ 
+//          console.log('error connecting to Mongo: ')
+//          console.log(err);
          
-        }
-  );
+//         }
+//   );
 
 
-module.exports = mongoose.connection
+// module.exports = mongoose.connection
