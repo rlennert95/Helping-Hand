@@ -79,4 +79,14 @@ router.post('/logout', (req, res) => {
     }
 })
 
+router.get("/allusers", function(req, res) {
+    console.log("All users route was hit!");
+    // get all users and send them back in a json blob
+    User
+      .find({})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  })
+  
+
 module.exports = router;

@@ -39,6 +39,7 @@ app.use(routes);
 
 
 
+
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/newusers").then(console.log("connected to mongoose from server.js in root"));
 
