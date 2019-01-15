@@ -35,7 +35,7 @@ class Navbar extends Component {
         return (
             <div>
 
-                <header className="navbar App-header" id="nav-container">
+                <header className="navbar navbar-expand-lg navbar-light bg-light" id="nav-container">
                     <div className="col-4" >
                         {loggedIn ? (
                             <section className="navbar-section">
@@ -63,7 +63,7 @@ class Navbar extends Component {
                     <div className="col-4 col-mr-auto">
                     <div id="top-filler"></div>
                         <img src={logo} className="App-logo" alt="logo" />
-                        <h1 className="App-title">MERN Passport</h1>
+                        <h1 className="App-title">Helping Hand</h1>
                     </div>
                 </header>
             </div>
