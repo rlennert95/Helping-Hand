@@ -24,11 +24,11 @@ if (process.env.NODE_ENV === "production") {
 // 	})
 // )
 
-app.use(session({ secret: "secret", resave: false, saveUninitialized: false }));
+app.use(session({ secret: "secret", resave: false, saveUninitialized: false, cookie: {secure: false, maxAge: 3600000 } }));
 
 // Passport
 app.use(passport.initialize())
-app.use(passport.session()) // calls the deserializeUser
+app.use(passport.session()) // calls the deserializeUser //MIGHT NEED TO REDO HOW THIS IS DONE IN SERVER
 
 
 
