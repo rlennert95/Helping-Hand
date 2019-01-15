@@ -18,7 +18,7 @@ const User = require('../models/user')
   router.post('/', (req, res) => {
     console.log('user signup');
 
-    const { username, password, contractor, email } = req.body
+    const { username, password, contractor, email, first_name, last_name, street, city, zipcode, phone } = req.body
     // ADD VALIDATION
     User.findOne({ username: username }, (err, user) => {
         if (err) {
@@ -34,6 +34,12 @@ const User = require('../models/user')
                 password: password,
                 contractor: contractor,
                 email: email,
+                first_name: first_name,
+                last_name: last_name,
+                street: street,
+                city: city,
+                zipcode: zipcode,
+                phone: phone
             })
             newUser.save((err, savedUser) => {
                 if (err) return res.json(err)
