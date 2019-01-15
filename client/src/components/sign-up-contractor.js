@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-class Signup extends Component {
+class ContractorSignup extends Component {
 	constructor() {
 		super()
 		this.state = {
 			username: '',
-			password: '',
-			email: '',
+            password: '',
+            email: '',
+			contractor: '',
 			confirmPassword: '',
 
 		}
@@ -21,15 +22,16 @@ class Signup extends Component {
 	}
 	handleSubmit(event) {
 		console.log('sign-up handleSubmit, username: ')
-		console.log(this.state.username)
-		console.log(this.state.email)
+        console.log("username: " + this.state.username)
+        console.log("contractor: " + this.state.contractor)
 		event.preventDefault()
 
 		//request to server to add a new username/password
 		axios.post('/user/', {
 			username: this.state.username,
 			password: this.state.password,
-			email: this.state.email
+            contractor: this.state.contractor,
+            email: this.state.email,
 		})
 			.then(response => {
 				console.log(response)
@@ -52,7 +54,7 @@ class Signup extends Component {
 render() {
 	return (
 		<div className="SignupForm">
-			<h4>Sign up</h4>
+			<h4>Contractor Sign up</h4>
 			<form className="form-horizontal">
 				<div className="form-group">
 					<div className="col-1 col-ml-auto">
@@ -83,7 +85,7 @@ render() {
 						/>
 					</div>
 				</div>
-			    <div className="form-group">
+                <div className="form-group">
 					<div className="col-1 col-ml-auto">
 						<label className="form-label" htmlFor="email">Email: </label>
 					</div>
@@ -93,6 +95,20 @@ render() {
 							type="email"
 							name="email"
 							value={this.state.email}
+							onChange={this.handleChange}
+						/>
+					</div>
+				</div>
+				<div className="form-group">
+					<div className="col-1 col-ml-auto">
+						<label className="form-label" htmlFor="contractor">Contractor: </label>
+					</div>
+					<div className="col-3 col-mr-auto">
+						<input className="form-input"
+							placeholder="Contractor"
+							type="contractor"
+							name="contractor"
+							value={this.state.contractor}
 							onChange={this.handleChange}
 						/>
 					</div>
@@ -112,4 +128,4 @@ render() {
 }
 }
 
-export default Signup
+export default ContractorSignup
