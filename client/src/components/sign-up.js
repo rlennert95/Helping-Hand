@@ -14,6 +14,7 @@ class Signup extends Component {
 			city: '',
 			zipcode: '',
 			phone:'',
+			contractor: false,
 			confirmPassword: '',
 
 		}
@@ -42,6 +43,7 @@ class Signup extends Component {
 			city: this.state.city,
 			zipcode: this.state.zipcode,
 			phone: this.state.phone,
+			contractor: this.state.contractor
 		})
 			.then(response => {
 				console.log(response)

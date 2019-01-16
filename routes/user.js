@@ -58,7 +58,7 @@ router.post(
     },
     passport.authenticate('local'),
     (req, res) => {
-        console.log('logged in', req.user);
+        console.log('logged innnnnnn', req.user);
         var userInfo = {
             username: req.user.username
         };
@@ -94,6 +94,24 @@ router.get("/allusers", function(req, res) {
       .find({})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  })
+
+  router.get("/current_user", function(req, res) {
+    console.log("/current_user route was hit!");
+    if (req.user) {
+       const id = req.user._id
+       
+
+       User
+       .findById({})
+       .then(dbModel => res.json(dbModel))
+       .catch(err => res.status(422).json(err));
+    } else {
+        res.send({ msg: 'no user' })
+    }
+   
+//just finds the first user in the allusers array, we want to grab the current user
+
   })
   
 

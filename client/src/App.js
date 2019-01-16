@@ -8,6 +8,8 @@ import Navbar from './components/navbar'
 import Home from './components/home'
 import ContractorSignup from './components/sign-up-contractor'
 import Footer from './components/Footer';
+import ContractorHome from './components/home-contractor';
+import HomeownerHome from './components/home-homeowner';
 
 class App extends Component {
   constructor() {
@@ -80,6 +82,16 @@ class App extends Component {
           path="/signup-contractor"
           render={() =>
             <ContractorSignup/>}
+        />
+           <Route
+          path="/home-contractor"
+          render={() =>
+            <ContractorHome/>}
+        />
+           <Route
+          path="/home-homeowner"
+          render={() =>
+            <HomeownerHome/>}
         />
         <Footer />
       </div>
