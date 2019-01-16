@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Jumbotron from './Jumbotron';
 
-class Home extends Component {
+class HomeownerHome extends Component {
     constructor() {
         super()
     }
@@ -13,11 +13,10 @@ class Home extends Component {
             width: 400
         }
         return (
-           
-          <Jumbotron title="Helping Hand" subtitle="There when you need it!"/>
+          <Jumbotron title="HOMEOWNER HOME PAGE" subtitle="There when you need it!"/>
         )
 
     }
 }
 
-export default Home
+export default HomeownerHome

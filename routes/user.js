@@ -18,7 +18,7 @@ const User = require('../models/user')
   router.post('/', (req, res) => {
     console.log('user signup');
 
-    const { username, password, contractor, email } = req.body
+    const { username, password, contractor, email, first_name, last_name, street, city, zipcode, phone } = req.body
     // ADD VALIDATION
     User.findOne({ username: username }, (err, user) => {
         if (err) {
@@ -34,6 +34,12 @@ const User = require('../models/user')
                 password: password,
                 contractor: contractor,
                 email: email,
+                first_name: first_name,
+                last_name: last_name,
+                street: street,
+                city: city,
+                zipcode: zipcode,
+                phone: phone
             })
             newUser.save((err, savedUser) => {
                 if (err) return res.json(err)
@@ -52,7 +58,7 @@ router.post(
     },
     passport.authenticate('local'),
     (req, res) => {
-        console.log('logged in', req.user);
+        console.log('logged innnnnnn', req.user);
         var userInfo = {
             username: req.user.username
         };
@@ -88,6 +94,24 @@ router.get("/allusers", function(req, res) {
       .find({})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  })
+
+  router.get("/current_user", function(req, res) {
+    console.log("/current_user route was hit!");
+    if (req.user) {
+       const id = req.user._id
+       
+
+       User
+       .findById({})
+       .then(dbModel => res.json(dbModel))
+       .catch(err => res.status(422).json(err));
+    } else {
+        res.send({ msg: 'no user' })
+    }
+   
+//just finds the first user in the allusers array, we want to grab the current user
+
   })
   
 

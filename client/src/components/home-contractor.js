@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Jumbotron from './Jumbotron';
 
-class Home extends Component {
+class ContractorHome extends Component {
     constructor() {
         super()
     }
@@ -12,12 +12,16 @@ class Home extends Component {
         const imageStyle = {
             width: 400
         }
+
         return (
-           
-          <Jumbotron title="Helping Hand" subtitle="There when you need it!"/>
+            
+          <Jumbotron title="CONTRACTOR HOME PAGE" subtitle="There when you need it!"/>
+          
         )
+
+
 
     }
 }
 
-export default Home
+export default ContractorHome
