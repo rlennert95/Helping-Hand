@@ -1,5 +1,6 @@
 module.exports = {
-  User: require("./user")
+  User: require("./user"),
+  Job: require("./job")
 };
 
 // //Connect to Mongo database
