@@ -10,6 +10,9 @@ import ContractorSignup from './components/sign-up-contractor'
 import Footer from './components/Footer';
 import ContractorHome from './components/home-contractor';
 import HomeownerHome from './components/home-homeowner';
+import Listings from './components/Listings/index';
+import Jobs from './pages/Jobs';
+import Detail from './pages/Detail';
 
 class App extends Component {
   constructor() {
@@ -93,6 +96,17 @@ class App extends Component {
           render={() =>
             <HomeownerHome/>}
         />
+        <Route
+          path="/listings"
+          render={() =>
+            <Listings/>}
+        />
+        <Route
+          path="/jobs"
+          render={() =>
+            <Jobs/>}
+        />
+        <Route exact path="/jobs/:id" component={Detail} />
         <Footer />
       </div>
     );
