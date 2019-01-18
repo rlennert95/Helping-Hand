@@ -7,11 +7,11 @@ export default {
   },
   // Gets the book with the given id
   getJob: function(id) {
-    return axios.get("/api/job/" + id);
+    return axios.get("/job/" + id);
   },
   // Deletes the book with the given id
   deleteJob: function(id) {
-    return axios.delete("/api/job/" + id);
+    return axios.delete("/job/" + id);
   },
   // Saves a book to the database
   saveJob: function(jobData) {

@@ -46,7 +46,7 @@ class Listings extends React.Component {
               <List>
                 {this.state.jobList.map(job => (
                   <ListItem key={job._id}>
-                    <Link to={"/jobs/" + job._id}>
+                    <Link to={"/details/" + job._id}>
                       <strong>
                         {job.jobType}
                       </strong>
@@ -63,5 +63,7 @@ class Listings extends React.Component {
         )
     }
 }
+
+// onClick={() => this.deleteJob(job._id)}
 
 export default Listings

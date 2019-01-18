@@ -106,7 +106,7 @@ class App extends Component {
           render={() =>
             <Jobs/>}
         />
-        <Route exact path="/jobs/:id" component={Detail} />
+        <Route exact path="/details/:id" component={Detail} />
         <Footer />
       </div>
     );
