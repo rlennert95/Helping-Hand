@@ -15,7 +15,7 @@ export function Dropdown(props) {
         <option value="painting">Painting</option>
         <option value="plumbing">Plumbing</option>
         <option value="tech">Tech</option>
-        <option value="yardLawn">Yard/lawn</option>
+        <option value="yard and lawn">Yard/lawn</option>
       </select>
     </div>
   )
