@@ -2,6 +2,7 @@ const router = require("express").Router();
 // const UserController = require("../../controllers/usercontroller");
 const passport = require('../passport')
 const User = require('../models/user')
+let CurrentUser = {};
 
 // // Matches with "/api/User"
 // router.route("/")
@@ -59,6 +60,7 @@ router.post(
     passport.authenticate('local'),
     (req, res) => {
         console.log('logged innnnnnn', req.user);
+        CurrentUser = req.user;
         var userInfo = {
             username: req.user.username
         };
@@ -68,9 +70,12 @@ router.post(
 
 router.get('/', (req, res, next) => {
     console.log('===== user!!======')
+    
     console.log(req.user)
+    console.log('===== CURRENT USER ======')
+    console.log(CurrentUser)
     if (req.user) {
-        res.json({ user: req.user })
+        res.json({ CurrentUser })
     } else {
         res.json({ user: null })
     }
@@ -96,23 +101,6 @@ router.get("/allusers", function(req, res) {
       .catch(err => res.status(422).json(err));
   })
 
-  router.get("/current_user", function(req, res) {
-    console.log("/current_user route was hit!");
-    if (req.user) {
-       const id = req.user._id
-       
 
-       User
-       .findById({})
-       .then(dbModel => res.json(dbModel))
-       .catch(err => res.status(422).json(err));
-    } else {
-        res.send({ msg: 'no user' })
-    }
-   
-//just finds the first user in the allusers array, we want to grab the current user
-
-  })
-  
 
 module.exports = router;
