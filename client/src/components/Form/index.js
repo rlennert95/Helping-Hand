@@ -7,15 +7,15 @@ export function Dropdown(props) {
     <div className="form-group">
       <select className="form-control" {...props}>
         <option value="">--Please choose a job type--</option> 
-        <option value="assembly">Assembly</option>
-        <option value="electrical">Electrical</option>
-        <option value="handyman">Handyman</option>
-        <option value="hvac">HVAC (heating, ventilation, and air conditioning)</option>
-        <option value="moving">Moving</option>
-        <option value="painting">Painting</option>
-        <option value="plumbing">Plumbing</option>
-        <option value="tech">Tech</option>
-        <option value="yard and lawn">Yard/lawn</option>
+        <option value="Assembly">Assembly</option>
+        <option value="Electrical">Electrical</option>
+        <option value="Handyman">Handyman</option>
+        <option value="HVAC">HVAC (heating, ventilation, and air conditioning)</option>
+        <option value="Moving">Moving</option>
+        <option value="Painting">Painting</option>
+        <option value="Plumbing">Plumbing</option>
+        <option value="Tech">Tech</option>
+        <option value="Yard and lawn">Yard/lawn</option>
       </select>
     </div>
   )
