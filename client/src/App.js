@@ -19,7 +19,8 @@ class App extends Component {
     super()
     this.state = {
       loggedIn: false,
-      username: null
+      username: null,
+      email: null
     }
 
     this.getUser = this.getUser.bind(this)
@@ -37,20 +38,26 @@ class App extends Component {
 
   getUser() {
     axios.get('/user/').then(response => {
-      console.log('Get user response: ')
-      console.log(response.data)
-      if (response.data.user) {
+      // console.log('Get user response: ')
+      // console.log("resonse.data: " + response.data)
+      // // console.log(response.data.CurrentUser.email) //still needs more
+      // console.log("response.data.user.CurrentUser: " + response.data.user)
+      if (response.data.CurrentUser) {
         console.log('Get User: There is a user saved in the server session: ')
+        console.log(response.data)
 
         this.setState({
           loggedIn: true,
-          username: response.data.user.username
+          username: response.data.CurrentUser.username,
+          email: response.data.CurrentUser.email
+      
         })
       } else {
         console.log('Get user: no user');
         this.setState({
           loggedIn: false,
-          username: null
+          username: null,
+          email: null
         })
       }
     })
@@ -63,7 +70,7 @@ class App extends Component {
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
-          <p>Join the party, {this.state.username}!</p>
+          <p>Join the party, {this.state.username} email: {this.state.email}!</p>
         }
         {/* Routes to different components */}
         <Route

@@ -2,18 +2,20 @@ const router = require("express").Router();
 const UserController = require("../../controllers/usercontroller");
 const passport = require('../../passport')
 const User = require('../../models/user')
+const CurrentUser = {};
 
 // Matches with "/api/User"
-router.route("/")
-  .get(UserController.findAll)
+// router.route("/")
+//   .get(UserController.findAll)
+//   console.log('test');
   //.post(UserController.create);
 
 // Matches with "/api/User/:id"
-router
-  .route("/:id")
-  .get(UserController.findById)
-  .put(UserController.update)
-  .delete(UserController.remove);
+// router
+//   .route("/:id")
+//   .get(UserController.findById)
+//   .put(UserController.update)
+//   .delete(UserController.remove);
 
   router.post('/', (req, res) => {
     console.log('user signup');
@@ -51,6 +53,7 @@ router.post(
     passport.authenticate('local'),
     (req, res) => {
         console.log('logged in', req.user);
+        CurrentUser = req.user;
         var userInfo = {
             username: req.user.username
         };
@@ -59,8 +62,10 @@ router.post(
 )
 
 router.get('/', (req, res, next) => {
-    console.log('===== user!!======')
+    console.log('===== user!777777!======')
     console.log(req.user)
+    Console.log("CURRENT USER CURRENT USER CURRENT USER")
+    console.log(CurrentUser)
     if (req.user) {
         res.json({ user: req.user })
     } else {
