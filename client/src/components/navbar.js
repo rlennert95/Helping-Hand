@@ -35,23 +35,23 @@ class Navbar extends Component {
         return (
             <div>
 
-                <header className="navbar navbar-expand-lg navbar-light bg-light" id="nav-container">
-                    <div className="col-4" >
-                        {loggedIn ? (
-                            <section className="navbar-section">
-                                <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                                <span className="text-secondary">logout</span></Link>
-                                <Link to="/listings" className="btn btn-link">
-                                        <span className="text-secondary">Listings</span>
-				                    </Link>
-                                    <Link to="/Jobs" className="btn btn-link">
-                                        <span className="text-secondary">Submit a job request</span>
-				                    </Link>
+     <header className="navbar navbar-expand-lg navbar-light bg-light" id="nav-container">
+        
+            {loggedIn ? (
+            <section className="navbar-section">
+                <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
+                <span className="text-secondary">logout</span></Link>
+                <Link to="/listings" className="btn btn-link">
+                     <span className="text-secondary">Listings</span>
+				      </Link>
+                 <Link to="/Jobs" className="btn btn-link">
+                  <span className="text-secondary">Submit a job request</span>
+				 </Link>
 
-                            </section>
+        </section>
                         ) : (
-                                <section className="navbar-section">
-                                    <Link to="/" className="btn btn-link text-secondary">
+    <section className="navbar-section">
+             <Link to="/" className="btn btn-link text-secondary">
                                         <span className="text-secondary">home</span>
                                     </Link>
                                     <Link to="/login" className="btn btn-link text-secondary">
@@ -71,12 +71,8 @@ class Navbar extends Component {
 				                    </Link>
                                 </section>
                             )}
-                    </div>
-                    <div className="col-4 col-mr-auto">
-                    <div id="top-filler"></div>
-                        <img src={logo} className="App-logo" alt="logo" />
-                        <h1 className="App-title">Helping Hand</h1>
-                    </div>
+                   
+             
                 </header>
             </div>
 
