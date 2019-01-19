@@ -88,10 +88,13 @@ class Home extends Component {
 
         if (this.state.loggedIn == true && this.state.contractor == true ) {
           console.log("render: I AM A CONTRACTOR")
+          //INSERT RETURN HERE
          } else if (this.state.loggedIn == true && this.state.contractor == false) {
            console.log("render: I AM A HOMEOWNER")
+            //INSERT RETURN HERE
          } else {
            console.log("render: I AM NOTHING")
+            //INSERT RETURN HERE
          }
 
         return (
