@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Navbar from './navbar'
 
 class Signup extends Component {
 	constructor() {
@@ -66,6 +67,7 @@ class Signup extends Component {
 render() {
 	return (
 		<div className="SignupForm">
+		<Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
 			<h4>Sign up</h4>
 			<form className="form-horizontal">
 				<div className="form-group">
