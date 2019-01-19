@@ -52,15 +52,54 @@ class Home extends Component {
               email: null,
               contractor: null
             })
-          }
+            
+          }   console.log("LOGGED IN STATE")
+              console.log(this.state.loggedIn)
+              console.log("CONTRACTOR STATE")
+              console.log(this.state.contractor)
+  
+              if (this.state.loggedIn == true && this.state.contractor == true ) {
+               console.log("I AM A CONTRACTOR")
+              } else if (this.state.loggedIn == true && this.state.contractor == false) {
+                console.log("I AM A HOMEOWNER")
+              } else {
+                console.log("I AM NOTHING")
+              }
+          
         })
+        // console.log("LOGGED IN STATE")
+        // console.log(this.state.loggedIn)
+        // console.log("CONTRACTOR STATE")
+        //     console.log(this.state.contractor)
+
+        //     if (this.state.loggedIn == true && this.state.contractor == true ) {
+        //      console.log("I AM A CONTRACTOR")
+        //     } else if (this.state.loggedIn == true && this.state.contractor == false) {
+        //       console.log("I AM A HOMEOWNER")
+        //     } else {
+        //       console.log("I AM NOTHING")
+        //     }
       }
 
     render() {
         const imageStyle = {
             width: 400
         }
+
+        if (this.state.loggedIn == true && this.state.contractor == true ) {
+          console.log("render: I AM A CONTRACTOR")
+          //INSERT RETURN HERE
+         } else if (this.state.loggedIn == true && this.state.contractor == false) {
+           console.log("render: I AM A HOMEOWNER")
+            //INSERT RETURN HERE
+         } else {
+           console.log("render: I AM NOTHING")
+            //INSERT RETURN HERE
+         }
+
         return (
+          
+
         <div>
             <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}

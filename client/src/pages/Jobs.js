@@ -7,6 +7,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, Timeframe, FormBtn, Dropdown } from "../components/Form";
 import { Listings } from "../components/Listings"
+import axios from 'axios'
 
 const colStyle = {
   marginLeft: "200px"
@@ -19,8 +20,35 @@ class Jobs extends Component {
     jobType: "",
     location: "",
     description: "",
-    timeframe: ""
+    timeframe: "",
+    username: null
   };
+
+  componentDidMount() {
+    this.getUser()
+  }
+
+  getUser() {
+    axios.get('/user/').then(response => {
+      // console.log('Get user response: ')
+      // console.log("resonse.data: " + response.data)
+      // // console.log(response.data.CurrentUser.email) //still needs more
+      // console.log("response.data.user.CurrentUser: " + response.data.user)
+      if (response.data.CurrentUser) {
+        console.log('Get User: There is a user saved in the server session: ')
+        console.log(response.data)
+
+        this.setState({
+         
+          username: response.data.CurrentUser.username,
+
+        })
+      } else {
+        console.log('Get user: no user');
+      }  
+    })
+   
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target
@@ -36,13 +64,16 @@ class Jobs extends Component {
         jobType: this.state.jobType,
         location: this.state.location,
         description: this.state.description,
-        timeframe: this.state.timeframe
+        timeframe: this.state.timeframe,
+        username: this.state.username
       })
       
         .then(res => this.loadJobs())
         .catch(err => console.log(err));
     }
   };
+
+  
 
   render() {
     return (
