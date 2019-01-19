@@ -4,6 +4,8 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 
+style 
+
 class Detail extends Component {
   state = {
     job: {}
@@ -14,12 +16,14 @@ class Detail extends Component {
     API.getJob(this.props.match.params.id)
       .then(res => this.setState({ job: res.data }))
       .catch(err => console.log(err));
+
+
   }
 
   render() {
     return (
       <Container fluid>
-        <Row>
+        {/* <Row>
           <Col size="md-12">
             <Jumbotron>
               <h1>
@@ -27,7 +31,7 @@ class Detail extends Component {
               </h1>
             </Jumbotron>
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
