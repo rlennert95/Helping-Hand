@@ -9,6 +9,7 @@ import API from "../utils/API";
 import Jobs from '../pages/Jobs';
 import Detail from '../pages/Detail';
 import Listings from './Listings/index'
+import Profile from './profile'
 
 class Home extends Component {
     constructor() {
@@ -101,6 +102,7 @@ class Home extends Component {
           return (
             <div>
             <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
+            <Profile/>
             <Listings/>
             </div>
           )
@@ -109,6 +111,7 @@ class Home extends Component {
            return (
              <div>
             <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
+            <Profile/>
              <Jobs> </Jobs>
              </div>
            )
