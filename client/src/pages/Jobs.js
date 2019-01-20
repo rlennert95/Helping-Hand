@@ -79,7 +79,7 @@ class Jobs extends Component {
   render() {
     return (
       <Container fluid>
-      	<Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+      	{/* <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} /> */}
         <Row>
           <Col size="md-6" style={colStyle} >
             <Jumbotron>
