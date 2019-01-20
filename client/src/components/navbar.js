@@ -9,6 +9,9 @@ class Navbar extends Component {
     constructor() {
         super()
         this.logout = this.logout.bind(this)
+        this.state = {
+            username: null,
+          }
     }
 
     logout(event) {
@@ -25,6 +28,49 @@ class Navbar extends Component {
         }).catch(error => {
             console.log('Logout error')
         })
+      }
+
+      componentDidMount() {
+        this.getUser()
+      }
+
+      getUser() {
+        axios.get('/user/').then(response => {
+          // console.log('Get user response: ')
+          // console.log("resonse.data: " + response.data)
+          // // console.log(response.data.CurrentUser.email) //still needs more
+          // console.log("response.data.user.CurrentUser: " + response.data.user)
+          if (response.data.CurrentUser) {
+            console.log('Get User: There is a user saved in the server session: ')
+            console.log(response.data)
+    
+            this.setState({
+              loggedIn: true,
+              username: response.data.CurrentUser.username,
+          
+            })
+          } else {
+            console.log('Get user: no user');
+            this.setState({
+              loggedIn: false,
+              username: null,
+            })
+            
+          }   console.log("LOGGED IN STATE")
+              console.log(this.state.loggedIn)
+              console.log("CONTRACTOR STATE")
+              console.log(this.state.contractor)
+  
+              if (this.state.loggedIn == true && this.state.contractor == true ) {
+               console.log("I AM A CONTRACTOR")
+              } else if (this.state.loggedIn == true && this.state.contractor == false) {
+                console.log("I AM A HOMEOWNER")
+              } else {
+                console.log("I AM NOTHING")
+              }
+          
+        })
+   
       }
 
     render() {
@@ -47,6 +93,7 @@ class Navbar extends Component {
                                     <Link to="/Jobs" className="btn btn-link">
                                         <span className="text-secondary">Submit a job request</span>
 				                    </Link>
+                                    <div> Username: {this.state.username} </div>
 
                             </section>
                         ) : (
