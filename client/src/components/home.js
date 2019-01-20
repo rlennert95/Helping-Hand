@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 import Navbar from './navbar'
 import axios from 'axios'
 
 import Jumbotron from './Jumbotron';
+import { Col, Row, Container } from "./Grid";
+import API from "../utils/API";
+import Jobs from '../pages/Jobs';
+import Detail from '../pages/Detail';
+import Listings from './Listings/index'
 
 class Home extends Component {
     constructor() {
@@ -11,7 +17,8 @@ class Home extends Component {
           loggedIn: false,
           username: null,
           email: null,
-          contractor: null
+          contractor: null,
+          job: {}
         }
     
         this.getUser = this.getUser.bind(this)
@@ -21,6 +28,9 @@ class Home extends Component {
     
       componentDidMount() {
         this.getUser()
+        API.getJob(this.props.match.params.id)
+        .then(res => this.setState({ job: res.data }))
+        .catch(err => console.log(err));
       }
     
       updateUser (userObject) {
@@ -88,9 +98,20 @@ class Home extends Component {
 
         if (this.state.loggedIn == true && this.state.contractor == true ) {
           console.log("render: I AM A CONTRACTOR")
-          //INSERT RETURN HERE
+          return (
+            <div>
+            <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
+            <Listings/>
+            </div>
+          )
          } else if (this.state.loggedIn == true && this.state.contractor == false) {
            console.log("render: I AM A HOMEOWNER")
+           return (
+             <div>
+            <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
+             <Jobs> </Jobs>
+             </div>
+           )
             //INSERT RETURN HERE
          } else {
            console.log("render: I AM NOTHING")

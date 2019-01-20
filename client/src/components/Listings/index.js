@@ -40,7 +40,7 @@ class Listings extends React.Component {
         return (
         <div>
         <Col size="md-6 sm-12">
-        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+       
             <Jumbotron>
               <h1>Available Jobs</h1>
               </Jumbotron>

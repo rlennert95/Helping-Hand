@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import Navbar from "../components/navbar";
+
 
 
 
@@ -24,7 +24,7 @@ class Detail extends Component {
   render() {
     return (
       <Container fluid>
-      		<Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+      	
         {/* <Row>
           <Col size="md-12">
             <Jumbotron>
