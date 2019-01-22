@@ -10,6 +10,7 @@ import Jobs from '../pages/Jobs';
 import Detail from '../pages/Detail';
 import Listings from './Listings/index'
 import Profile from './profile'
+;
 
 class Home extends Component {
     constructor() {
@@ -130,8 +131,8 @@ class Home extends Component {
         {this.state.loggedIn &&
           <p>Join the party, {this.state.username} email: {this.state.email}, CONTRACTOR STATUS: {this.state.contractor}!</p>
         }
-           
-          <Jumbotron title="Helping Hand" subtitle="There when you need it!"/>
+           <Jumbotron />
+        
           </div>
         )
 

@@ -79,10 +79,10 @@ class Navbar extends Component {
         console.log(this.props);
         
         return (
-            <div>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="container">
+            <div className="col-4" >
 
-                <header className="navbar navbar-expand-lg navbar-light bg-light" id="nav-container">
-                    <div className="col-4" >
                         {loggedIn ? (
                             <section className="navbar-section">
                                 <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
@@ -97,39 +97,36 @@ class Navbar extends Component {
 
                             </section>
                         ) : (
-                                <section className="navbar-section">
+                                <div className="collapse navbar-collapse">
                                     <Link to="/" className="btn btn-link text-secondary">
-                                        <span className="text-secondary">home</span>
+                                        <span className="text-secondary">Helping Hand</span>
                                     </Link>
                                     <Link to="/login" className="btn btn-link text-secondary">
-                                        <span className="text-secondary">login</span>
+                                        <span className="text-secondary">Login</span>
 				                    </Link>
                                     <Link to="/signup" className="btn btn-link">
-                                        <span className="text-secondary">sign up</span>
+                                        <span className="text-secondary">Sign up</span>
 				                    </Link>
                                     <Link to="/signup-contractor" className="btn btn-link">
-                                        <span className="text-secondary">contractor sign up</span>
-				                    </Link>
-                                    <Link to="/listings" className="btn btn-link">
-                                        <span className="text-secondary">Listings</span>
-				                    </Link>
-                                    <Link to="/Jobs" className="btn btn-link">
-                                        <span className="text-secondary">Submit a job request</span>
-				                    </Link>
-                                </section>
+                                        <span className="text-secondary">Contractor Sign up</span>
+                                    </Link>
+
+                                  </div>    
+                                 
+                                
                             )}
                     </div>
-                    <div className="col-4 col-mr-auto">
-                    <div id="top-filler"></div>
-                        <img src={logo} className="App-logo" alt="logo" />
-                        <h1 className="App-title">Helping Hand</h1>
+            
                     </div>
-                </header>
-            </div>
+            
+                    </nav>
 
-        );
 
-    }
-}
+                    );
+                
+                
+                 }
+                
+                }
 
 export default Navbar
