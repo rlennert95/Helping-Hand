@@ -13,6 +13,28 @@ width: 100%; height: 100%;
 position: absolute; top: 0; left: 0;
 }
 
+#signupform_home {
+    background-image: url(../Images/h_signup.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+align-content: center;
+width: 100%; height: 100%;
+position: absolute; top: 0; left: 0;
+}
+
+#signupform_contractor {
+    background-image: url(../Images/c_signup.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+align-content: center;
+width: 100%; height: 100%;
+position: absolute; top: 0; left: 0;
+}
+
 .container{
 height: 100%;
 align-content: center;

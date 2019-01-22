@@ -10,7 +10,7 @@ import Jobs from '../pages/Jobs';
 import Detail from '../pages/Detail';
 import Listings from './Listings/index'
 import Profile from './profile'
-import Logo from '../Images/facebook_cover_photo_1.png'
+import Logo from '../Images/facebook_cover_photo_2.png'
 
 
 
@@ -141,7 +141,7 @@ class Home extends Component {
         {this.state.loggedIn &&
           <p>Join the party, {this.state.username} email: {this.state.email}, CONTRACTOR STATUS: {this.state.contractor}!</p>
         }
-        <Jumbotron />
+        
 
         <div id="demo" className="carousel slide" data-ride="carousel">
 

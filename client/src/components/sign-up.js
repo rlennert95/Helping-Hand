@@ -49,7 +49,7 @@ class Signup extends Component {
 			city: this.state.city,
 			zipcode: this.state.zipcode,
 			phone: this.state.phone,
-			contractor: this.state.contractor
+			contractor: false
 		})
 			.then(response => {
 				console.log(response)
@@ -76,162 +76,158 @@ render() {
 	}
 	
 	return (
-		<div id="signuplogin">
-		<div className="page-wrapper bg-gra-03 p-t-45 p-b-50">
-        <div className="wrapper wrapper--w790">
-            <div className="card card-5">
-                <div className="card-heading">
-                    <h2 className="title">Helping Hand Home Owner Sign-up</h2>
-                </div>
-                <div className="card-body">
-                    <form method="POST">
-                    <div className="form-row">
-                        <div className="name">Username</div>
-                            <div className="value">
-                                <div className="input-group">
-                                    <input className="input--style-5" type="text" name="username" type="text"
-                                    id="username"
-                                    placeholder="Username"
-                                    value={this.state.username}
-                                    onChange={this.handleChange}/>
-                                </div>
-                        </div>
+
+
+        <div id= "signupform_home">   
+        <div className="container">
+        <div className="d-flex justify-content-center h-100">
+            <div className="card">
+                <div className="card-header">
+                    <h3>Homeowner Sign-Up</h3>
+                    <div className="d-flex justify-content-end social_icon">
+                        <span><i className="fab fa-facebook-square"></i></span>
+                        <span><i className="fab fa-google-plus-square"></i></span>
+                        <span><i className="fab fa-twitter-square"></i></span>
                     </div>
-
-                    <div className="form-row">
-                         <div className="name">Password:</div>
-                            <div className="value">
-                                 <div className="input-group">
-                                <input className="input--style-5" name="password"
-                                placeholder="password"
-							type="password"
-
-							value={this.state.password}
-							onChange={this.handleChange}/>
+                </div>
+                <div className="card-body" id="signup_card">
+                    <form>
+                        <div className="input-group form-group">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fas fa-user"></i></span>
                             </div>
-                            </div>
-                        </div>
-
-                        <div className="form-row m-b-55">
-                            <div className="name">Name</div>
-                            <div className="value">
-                                <div className="row row-space">
-                                    <div className="col-2">
-                                        <div className="input-group-desc">
-                                            <input className="input--style-5" type="text" name="first_name"
-                                            placeholder="First Name"
-                                            type="first_name"
-                                            value={this.state.first_name}
-                                            onChange={this.handleChange}/>
-                                            <label className="label--desc">first name</label>
-                                        </div>
-                                    </div>
-                                    <div className="col-2">
-                                        <div className="input-group-desc">
-                                            <input className="input--style-5" type="text" name="last_name" 
-                                            placeholder="Last Name"
-                                            type="last_name"
+                            <input type="text" className="form-control" placeholder="Username"
                         
-                                            value={this.state.last_name}
-                                            onChange={this.handleChange}/>
-                                            <label className="label--desc">last name</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                id="username"
+                                        name="username"
+                                        placeholder="Username"
+                                        value={this.state.username}
+                                        onChange={this.handleChange}
+                                    />
+                            
                         </div>
-                        
-                        <div className="form-row">
-                            <div className="name">Email</div>
-                            <div className="value">
-                                <div className="input-group">
-                                    <input className="input--style-5" type="email" name="email" 
-                                    placeholder="Email"
-                                    type="email"
-                                    value={this.state.email}
-                                    onChange={this.handleChange}/>
-                                </div>
+                        <div className="input-group form-group">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fas fa-key"></i></span>
                             </div>
+                            <input type="password" className="form-control"
+                            placeholder="Password"
+                            type="password"
+                            name="password"
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                        />
+    
                         </div>
-                        <div className="form-row ">
-                            <div className="name">Phone</div>
-                            <div className="value">
-                                        <div className="input-group-desc">
-                                            <input className="input--style-5" type="text" name="phone"
-                                            placeholder="555-555-5555"
-                                            type="phone"
-                                            name="phone"
-                                            value={this.state.phone}
-                                            onChange={this.handleChange}/>
-                                            <label className="label--desc">Phone Number</label>
-                                        </div>
-                                    </div>
-                                </div>
-                        
-                        <div className="form-row">
-                                <div className="name">Street</div>
-                                <div className="value">
-                                    <div className="input-group">
-                                        <input className="input--style-5" type="text" name="street"
-                                        placeholder="Street"
-							type="street"
-							value={this.state.street}
-							onChange={this.handleChange}/>
-                                    </div>
-                                </div>
+                        <div className="input-group form-group">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fas fa-key"></i></span>
                             </div>
-                            <div className="form-row">
-                                    <div className="name">City</div>
-                                    <div className="value">
-                                        <div className="input-group">
-                                            <input className="input--style-5" type="text" name="city"
-                                            placeholder="city"
-                                type="city"
-                                value={this.state.city}
-                                onChange={this.handleChange}/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="form-row">
-                                        <div className="name">Zip code:</div>
-                                        <div className="value">
-                                            <div className="input-group">
-                                                <input className="input--style-5" type="text" name="zipcode"
-                                                placeholder="zipcode"
-                                    type="zipcode"
-                                    value={this.state.zipcode}
-                                    onChange={this.handleChange}/>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                        <div className="form-row">
-                            <div className="name">Subject</div>
-                            <div className="value">
-                                <div className="input-group">
-                                    <div className="rs-select2 js-select-simple select--no-search">
-                                        <select name="subject">
-                                            <option disabled="disabled" selected="selected">Choose option</option>
-                                            <option>Subject 1</option>
-                                            <option>Subject 2</option>
-                                            <option>Subject 3</option>
-                                        </select>
-                                        <div className="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            <input type="email" className="form-control"
+                            placeholder="Email"
+                            type="email"
+                            name="email"
+                            value={this.state.email}
+                            onChange={this.handleChange}
+                        />
+    
                         </div>
-                        
-                        <div>
-                            <button className="btn btn--radius-2 btn--red" 	onClick={this.handleSubmit} type="submit">Register</button>
+                        <div className="input-group form-group">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fas fa-key"></i></span>
+                            </div>
+                            <input type="first_name" className="form-control"
+                            placeholder="First Name"
+                            type="first_name"
+                            name="first_name"
+                            value={this.state.first_name}
+                            onChange={this.handleChange}
+                        />
+    
+                        </div>
+                        <div className="input-group form-group">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fas fa-key"></i></span>
+                            </div>
+                            <input type="last_name" className="form-control"
+                            placeholder="Last Name"
+                            type="last_name"
+                            name="last_name"
+                            value={this.state.last_name}
+                            onChange={this.handleChange}
+                        />
+    
+                        </div>
+                        <div className="input-group form-group">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fas fa-key"></i></span>
+                            </div>
+                            <input type="street" className="form-control"
+                            placeholder="Street Address"
+                            type="street"
+                            name="street"
+                            value={this.state.street}
+                            onChange={this.handleChange}
+                        />
+    
+                        </div>
+                        <div className="input-group form-group">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fas fa-key"></i></span>
+                            </div>
+                            <input type="city" className="form-control"
+                            placeholder="City"
+                            type="city"
+                            name="city"
+                            value={this.state.city}
+                            onChange={this.handleChange}
+                        />
+    
+                        </div>
+                        <div className="input-group form-group">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fas fa-key"></i></span>
+                            </div>
+                            <input type="zipcode" className="form-control"
+                            placeholder="Zipcode"
+                            type="zipcode"
+                            name="zipcode"
+                            value={this.state.zipcode}
+                            onChange={this.handleChange}
+                        />
+    
+                        </div>
+                        <div className="input-group form-group">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fas fa-key"></i></span>
+                            </div>
+                            <input type="phone" className="form-control"
+                            placeholder="Phone Number"
+                            type="phone"
+                            name="phone"
+                            value={this.state.phone}
+                            onChange={this.handleChange}
+                        />
+    
+                        </div>
+                      
+                        <div className="form-group">
+                            <input type="submit" value="Sign-Up" className="btn float-right login_btn" onClick={this.handleSubmit}/>
                         </div>
                     </form>
                 </div>
-            </div>
-			</div>
-            </div>
-
-			</div>
+                <div className="card-footer">
+                    <div className="d-flex justify-content-center links">
+                        Already have an account?<a href="/login">Login</a>
+                    </div>
+                    <div className="d-flex justify-content-center">
+                        <a href="#">Forgot your password?</a>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
         
 
 	)
