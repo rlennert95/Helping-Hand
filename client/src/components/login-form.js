@@ -9,7 +9,7 @@ class LoginForm extends Component {
         this.state = {
             username: '',
             password: '',
-            redirectTo: null
+            redirect: false
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -42,9 +42,7 @@ class LoginForm extends Component {
                         username: response.data.username
                     })
                     // update the state to redirect to home
-                    this.setState({
-                        redirectTo: '/'
-                    })
+                    this.setState({ redirect: true })
                 }
             }).catch(error => {
                 console.log('login error: ')
@@ -54,9 +52,12 @@ class LoginForm extends Component {
     }
 
     render() {
-        if (this.state.redirectTo) {
-            return <Redirect to={{ pathname: this.state.redirectTo }} />
-        } else {
+
+            const {redirect} = this.state;
+	        if (redirect) {
+		        return <Redirect to="/"/>
+            }
+            
             return (
                 <div>
                     <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
@@ -102,7 +103,7 @@ class LoginForm extends Component {
                     </form>
                 </div>
             )
-        }
+        
     }
 }
 
