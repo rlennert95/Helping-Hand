@@ -35,7 +35,7 @@ class LoginForm extends Component {
                 console.log('login response: ')
                 console.log(response)
                 
-                if (response.status === 200) {
+                if (!response.data.errmsg) {
                     // update App.js state
                     this.props.updateUser({
                         loggedIn: true,
@@ -43,6 +43,7 @@ class LoginForm extends Component {
                     })
                     // update the state to redirect to home
                     this.setState({ redirect: true })
+                    console.log("!@$@#%@!#%!@#%!@#%!@#%@!")
                 }
             }).catch(error => {
                 console.log('login error: ')
