@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router'
 import axios from 'axios'
 import Navbar from './navbar'
 

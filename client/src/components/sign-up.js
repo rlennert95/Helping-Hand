@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Navbar from './navbar'
+import { Redirect } from 'react-router';
 
 class Signup extends Component {
 	constructor() {
@@ -17,6 +18,7 @@ class Signup extends Component {
 			phone:'',
 			contractor: false,
 			confirmPassword: '',
+			redirect: false
 
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
@@ -50,9 +52,8 @@ class Signup extends Component {
 				console.log(response)
 				if (!response.data.errmsg) {
 					console.log('successful signup')
-					this.setState({ //redirect to login page
-						redirectTo: '/login'
-					})
+					this.setState({ redirect: true });
+		
 				} else {
 					console.log('username already taken')
 				}
@@ -65,6 +66,12 @@ class Signup extends Component {
 
 
 render() {
+
+	const {redirect} = this.state;
+	if (redirect) {
+		return <Redirect to="/login"/>
+	}
+	
 	return (
 		<div className="SignupForm">
 		<Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
@@ -209,6 +216,8 @@ render() {
 		</div>
 
 	)
+
+	
 }
 }
 
