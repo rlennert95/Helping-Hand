@@ -10,7 +10,9 @@ import Jobs from '../pages/Jobs';
 import Detail from '../pages/Detail';
 import Listings from './Listings/index'
 import Profile from './profile'
-;
+import Logo from '../Images/facebook_cover_photo_1.png'
+
+
 
 class Home extends Component {
     constructor() {
@@ -124,14 +126,51 @@ class Home extends Component {
 
         return (
           
+          
+                    
+           
 
         <div>
+          <div id="top-filler"></div>
+                        <img src={Logo} className="logo" alt="logo" />
+                       
             <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
           <p>Join the party, {this.state.username} email: {this.state.email}, CONTRACTOR STATUS: {this.state.contractor}!</p>
         }
            <Jumbotron />
+        
+           <div id="demo" className="carousel slide" data-ride="carousel">
+
+{/* <!-- Indicators --> */}
+<ul className="carousel-indicators">
+  <li data-target="#demo" data-slide-to="0" className="active"></li>
+  <li data-target="#demo" data-slide-to="1"></li>
+  <li data-target="#demo" data-slide-to="2"></li>
+</ul>
+
+{/* <!-- The slideshow --> */}
+<div className="carousel-inner">
+  <div className="carousel-item active">
+    <img src="https://www.concrete.org/portals/0/files/images/contractorportal_12column.jpg" alt="Los Angeles" width="1100" height="500"/>
+  </div>
+  <div className="carousel-item">
+    <img src="http://lenoxhillconstruction.com/wp-content/uploads/2016/03/General-Contractor-1024x683.jpg" alt="Chicago" width="1100" height="500"/>
+  </div>
+  <div className="carousel-item">
+    <img src="https://www.cm3.com.au/www/responsive/images/frontpage/for-clients.jpg" alt="New York" width="1100" height="500"/>
+  </div>
+</div>
+
+{/* <!-- Left and right controls --> */}
+<a className="carousel-control-prev" href="#demo" data-slide="prev">
+  <span className="carousel-control-prev-icon"></span>
+</a>
+<a className="carousel-control-next" href="#demo" data-slide="next">
+  <span className="carousel-control-next-icon"></span>
+</a>
+</div>
         
           </div>
         )
