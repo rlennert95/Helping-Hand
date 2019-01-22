@@ -40,11 +40,13 @@
  background: #f6c90e;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+
 
 #demo {
 width: 100% auto;
+}
+
+#signup_card {
+  max-height: 400px;
+  overflow-y: auto;
 }

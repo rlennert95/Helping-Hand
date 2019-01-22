@@ -16,6 +16,7 @@ const userSchema = new Schema({
 	city: {type: String, unique: false, required: false},
 	zipcode: {type: String, unique: false, required: false},
 	phone: {type: String, unique: false, required: false},
+	business: {type: String, unique: false, required: false},
 })
 
 // Define schema methods

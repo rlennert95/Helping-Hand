@@ -19,7 +19,7 @@ let CurrentUser = {};
   router.post('/', (req, res) => {
     console.log('user signup');
 
-    const { username, password, contractor, email, first_name, last_name, street, city, zipcode, phone } = req.body
+    const { username, password, contractor, email, first_name, last_name, street, city, zipcode, phone, business } = req.body
     // ADD VALIDATION
     User.findOne({ username: username }, (err, user) => {
         if (err) {
@@ -40,7 +40,8 @@ let CurrentUser = {};
                 street: street,
                 city: city,
                 zipcode: zipcode,
-                phone: phone
+                phone: phone,
+                business: business
             })
             newUser.save((err, savedUser) => {
                 if (err) return res.json(err)
