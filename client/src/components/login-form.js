@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router'
 import axios from 'axios'
 import Navbar from './navbar'
 
@@ -9,7 +9,7 @@ class LoginForm extends Component {
         this.state = {
             username: '',
             password: '',
-            redirectTo: null
+            redirect: false
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -35,16 +35,15 @@ class LoginForm extends Component {
                 console.log('login response: ')
                 console.log(response)
                 
-                if (response.status === 200) {
+                if (!response.data.errmsg) {
                     // update App.js state
                     this.props.updateUser({
                         loggedIn: true,
                         username: response.data.username
                     })
                     // update the state to redirect to home
-                    this.setState({
-                        redirectTo: '/'
-                    })
+                    this.setState({ redirect: true })
+                    console.log("!@$@#%@!#%!@#%!@#%!@#%@!")
                 }
             }).catch(error => {
                 console.log('login error: ')
@@ -54,9 +53,12 @@ class LoginForm extends Component {
     }
 
     render() {
-        if (this.state.redirectTo) {
-            return <Redirect to={{ pathname: this.state.redirectTo }} />
-        } else {
+
+            const {redirect} = this.state;
+	        if (redirect) {
+		        return <Redirect to="/"/>
+            }
+            
             return (
                 <div>
                     <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
@@ -102,7 +104,7 @@ class LoginForm extends Component {
                     </form>
                 </div>
             )
-        }
+        
     }
 }
 
