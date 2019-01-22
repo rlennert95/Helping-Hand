@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Navbar from './navbar'
+
 import './sign-up.css';
+
+import { Redirect } from 'react-router';
 
 class Signup extends Component {
 	constructor() {
@@ -18,6 +21,7 @@ class Signup extends Component {
 			phone:'',
 			contractor: false,
 			confirmPassword: '',
+			redirect: false
 
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
@@ -51,9 +55,8 @@ class Signup extends Component {
 				console.log(response)
 				if (!response.data.errmsg) {
 					console.log('successful signup')
-					this.setState({ //redirect to login page
-						redirectTo: '/login'
-					})
+					this.setState({ redirect: true });
+		
 				} else {
 					console.log('username already taken')
 				}
@@ -66,6 +69,12 @@ class Signup extends Component {
 
 
 render() {
+
+	const {redirect} = this.state;
+	if (redirect) {
+		return <Redirect to="/login"/>
+	}
+	
 	return (
 		<div id="signuplogin">
 		<div className="page-wrapper bg-gra-03 p-t-45 p-b-50">
@@ -226,6 +235,8 @@ render() {
         
 
 	)
+
+	
 }
 }
 
