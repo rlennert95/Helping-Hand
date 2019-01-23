@@ -7,6 +7,8 @@ import { Col, Row, Container } from "../Grid";
 import { List, ListItem } from "../List";
 import { Input, TextArea, Timeframe, FormBtn, Dropdown } from "../Form/index";
 import Navbar from "../navbar"
+let icon;
+
 
 class Listings extends React.Component {
 
@@ -37,6 +39,10 @@ class Listings extends React.Component {
   };
 
     render() {
+
+    
+    
+
         return (
         <div>
         <Col size="md-6 sm-12">
@@ -50,9 +56,9 @@ class Listings extends React.Component {
                   <ListItem key={job._id}>
                     <Link to={"/details/" + job._id}>
                       <strong>
+                          
 
-
-                        JOBTYPE: ICON GOES HERE {job.jobType} TIMEFRAME: {job.timeframe}
+                        JOBTYPE: ICON: {icon} {job.jobType} TIMEFRAME: {job.timeframe}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteJob(job._id)} />
