@@ -9,9 +9,10 @@ import { Input, TextArea, Timeframe, FormBtn, Dropdown } from "../components/For
 import { Listings } from "../components/Listings"
 import axios from 'axios'
 import Navbar from "../components/navbar";
+import './job-form.css'
 
-const colStyle = {
-  marginLeft: "200px"
+const buttonStyle = {
+  float: "none"
 }
 
 class Jobs extends Component {
@@ -103,13 +104,14 @@ class Jobs extends Component {
 
   render() {
     return (
+      
       <Container fluid>
       	{/* <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} /> */}
-        <Row>
-          <Col size="md-6" style={colStyle} >
-            <Jumbotron>
+        {/* <Row>
+          <Col size="md-6" style={colStyle} > */}
+            {/* <Jumbotron>
               <h1>Post A Job</h1>
-            </Jumbotron>
+            </Jumbotron> */}
             <form>
               <Dropdown
                 value={this.state.jobType}
@@ -136,17 +138,16 @@ class Jobs extends Component {
               />
               <FormBtn
                 // disabled={!(this.state.author && this.state.title)}
+                style={buttonStyle}
                 onClick={this.handleFormSubmit}
               >
-                Submit Job
+                Submit job request
               </FormBtn>
             </form>
-          </Col>
-        </Row>
-        <Link to="/listings" className="btn btn-link">
-          <span className="text-dark">Listings</span>
-				</Link>
+          {/* </Col>
+        </Row> */}
       </Container>
+     
     );
   }
 }
