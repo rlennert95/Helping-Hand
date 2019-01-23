@@ -22,7 +22,15 @@ class Jobs extends Component {
     location: "",
     description: "",
     timeframe: "",
-    username: null
+    username: null,
+    email: null,
+    first_name: null,
+    last_name: null,
+    street: null,
+    city: null,
+    zipcode: null,
+    phone: null,
+    business: null
   };
 
   componentDidMount() {
@@ -42,6 +50,14 @@ class Jobs extends Component {
         this.setState({
          
           username: response.data.CurrentUser.username,
+          email:  response.data.CurrentUser.email,
+          first_name:  response.data.CurrentUser.first_name,
+          last_name:  response.data.CurrentUser.last_name,
+          street:  response.data.CurrentUser.street,
+          city:  response.data.CurrentUser.city,
+          zipcode:  response.data.CurrentUser.zipcode,
+          phone:  response.data.CurrentUser.phone,
+          business:  response.data.CurrentUser.business
 
         })
       } else {
@@ -66,7 +82,16 @@ class Jobs extends Component {
         location: this.state.location,
         description: this.state.description,
         timeframe: this.state.timeframe,
-        username: this.state.username
+        username: this.state.username,
+        email: this.state.email,
+        first_name: this.state.first_name,
+        last_name: this.state.last_name,
+        street: this.state.street,
+        city: this.state.city,
+        zipcode: this.state.zipcode,
+        phone: this.state.phone,
+        business: this.state.business
+
       })
       
         .then(res => this.loadJobs())
