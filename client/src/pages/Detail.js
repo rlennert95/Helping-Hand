@@ -44,6 +44,14 @@ class Detail extends Component {
                   <li>Description: {this.state.job.description}</li>
                   <li>Location: {this.state.job.location}</li>
                   <li>Timeframe: {this.state.job.timeframe}</li>
+                  <li>Username: {this.state.job.username}</li>
+                  <li>Email: {this.state.job.email}</li>
+                  <li>First Name: {this.state.job.first_name}</li>
+                  <li>Last Name: {this.state.job.last_name}</li>
+                  <li>Street: {this.state.job.street}</li>
+                  <li>City: {this.state.job.city}</li>
+                  <li>Zipcode: {this.state.job.zipcode}</li>
+                  <li>Phone: {this.state.job.phone}</li>
               </ul>
               <button>Accept job</button>
             </article>
