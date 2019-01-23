@@ -50,3 +50,8 @@ width: 100% auto;
   max-height: 400px;
   overflow-y: auto;
 }
+
+#job_icon {
+  width: 120px;
+  height: 120px;
+}

@@ -8,6 +8,8 @@ import { List, ListItem } from "../List";
 import { Input, TextArea, Timeframe, FormBtn, Dropdown } from "../Form/index";
 import Navbar from "../navbar"
 
+
+
 class Listings extends React.Component {
 
   state = {
@@ -37,6 +39,10 @@ class Listings extends React.Component {
   };
 
     render() {
+
+      
+     
+
         return (
         <div>
         <Col size="md-6 sm-12">
@@ -52,7 +58,7 @@ class Listings extends React.Component {
                       <strong>
 
 
-                        JOBTYPE: ICON GOES HERE {job.jobType} TIMEFRAME: {job.timeframe}
+                        JOBTYPE:  {job.jobType} TIMEFRAME: {job.timeframe}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteJob(job._id)} />
