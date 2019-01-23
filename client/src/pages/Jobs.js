@@ -144,7 +144,7 @@ class Jobs extends Component {
           </Col>
         </Row>
         <Link to="/listings" className="btn btn-link">
-          <span className="text-secondary">Listings</span>
+          <span className="text-dark">Listings</span>
 				</Link>
       </Container>
     );
