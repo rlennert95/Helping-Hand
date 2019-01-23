@@ -120,6 +120,10 @@ class Home extends Component {
       console.log("render: I AM A CONTRACTOR")
       return (
         <div>
+            
+        <div id="top-filler"> <img src={Logo} className="logo" id="main_logo" style={{ width: 200 }} alt="logo" /> </div>
+        
+       
           <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
             <div className="contractor-wrapper" style={contractorStyle}>
               <Profile />
@@ -131,6 +135,7 @@ class Home extends Component {
       console.log("render: I AM A HOMEOWNER")
       return (
         <div>
+            <div id="top-filler"> <img src={Logo} className="logo" id="main_logo" style={{ width: 200 }} alt="logo" /> </div>
           <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
           <div className="client-wrapper" style={clientStyle}>
             <Profile />
