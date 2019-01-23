@@ -7,7 +7,7 @@ return  (
 
     <footer className="footer">
       <div className="container">
-        <span className="text-muted">©HelpingHand</span>
+        <span className="text-dark">©HelpingHand</span>
       </div>
     </footer>
 

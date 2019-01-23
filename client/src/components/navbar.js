@@ -4,6 +4,7 @@ import { Route, Link } from 'react-router-dom'
 import logo from '../logo.svg';
 import '../App.css';
 import axios from 'axios'
+import './navbar.css'
 
 class Navbar extends Component {
     constructor() {
@@ -79,37 +80,53 @@ class Navbar extends Component {
         console.log(this.props);
         
         return (
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg">
             <div className="container">
             <div className="col-4" >
 
                         {loggedIn ? (
                             <section className="navbar-section">
-                                <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                                <span className="text-secondary">logout</span></Link>
+                                <Link to="#" className="btn btn-link text-dark" onClick={this.logout}>
+                                <span className="text-dark">logout</span></Link>
                                 <Link to="/listings" className="btn btn-link">
-                                        <span className="text-secondary">Listings</span>
+                                        <span className="text-dark">Listings</span>
 				                    </Link>
                                     <Link to="/Jobs" className="btn btn-link">
-                                        <span className="text-secondary">Submit a job request</span>
+                                        <span className="text-dark">Submit a job request</span>
 				                    </Link>
                                     <div> Username: {this.state.username} </div>
 
                             </section>
                         ) : (
                                 <div className="collapse navbar-collapse">
-                                    <Link to="/" className="btn btn-link text-secondary">
-                                        <span className="text-secondary">Helping Hand</span>
-                                    </Link>
-                                    <Link to="/login" className="btn btn-link text-secondary">
-                                        <span className="text-secondary">Login</span>
-				                    </Link>
-                                    <Link to="/signup" className="btn btn-link">
+                                    
+                                    <Link to="/login" className="btn btn-link text-dark">
+                                        <span className="text-dark">Login</span>
+				                          </Link>
+                                    {/* <Link to="/signup" className="btn btn-link">
                                         <span className="text-secondary">Sign up</span>
 				                    </Link>
                                     <Link to="/signup-contractor" className="btn btn-link">
                                         <span className="text-secondary">Contractor Sign up</span>
-                                    </Link>
+                                    </Link> */}
+
+
+
+                                    <div className="dropdown">
+                                      <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Sign-up
+                                      </button>
+                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <Link to="/signup" className="dropdown-item">
+                                        <span className="text-dark">Client sign-up</span>
+                                      </Link>
+                                      <Link to="/signup-contractor" className="dropdown-item">
+                                        <span className="text-dark">Contractor sign-up</span>
+                                      </Link>
+                                    </div>
+                                  </div>
+
+
 
                                   </div>    
                                  

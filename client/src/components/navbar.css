@@ -4,6 +4,49 @@
   }
   
   a {
-    color: #aaa;
+    color: white;
     font-weight: 200;
   }
+
+  .navbar-brand {
+    color: #333;
+  }
+  
+a {
+    color: white;
+    font-weight: 200;
+  }
+
+.dropdown-toggle {
+  width: 164.85px;
+  margin-left: 15px;
+
+}
+
+.col-4 {
+  padding-left: 0px;
+  margin: 0 auto;
+  margin-left: 425px;
+}
+
+.navbar {
+  border-bottom-width: 0px;
+  background-color: #f6c90e;
+}
+
+.text {
+  color: white;
+}
+
+.btn-secondary, .dropdown-toggle {
+  background-color: #f6c90e;
+  border-color: black;
+  color: black;
+}
+
+.dropdown-menu.show {
+  background-color: #f6c90e;
+  border-color: black;
+  color: black;
+  margin-left: 15px;
+}
