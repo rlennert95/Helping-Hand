@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../Grid";
 import { List, ListItem } from "../List";
 import { Input, TextArea, Timeframe, FormBtn, Dropdown } from "../Form/index";
-import Navbar from "../navbar"
+import Navbar from '../navbar';
+import './listings.css'
+
 
 
 
@@ -44,12 +46,12 @@ class Listings extends React.Component {
      
 
         return (
-        <div>
-        <Col size="md-6 sm-12">
+
+    <div className="listings">
        
-            <Jumbotron>
+            {/* <Jumbotron>
               <h1>Available Jobs</h1>
-              </Jumbotron>
+              </Jumbotron> */}
             {this.state.jobList.length ? (
               <List>
                 {this.state.jobList.map(job => (
@@ -68,8 +70,7 @@ class Listings extends React.Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
-          </Col>
-          </div>
+      </div>
         )
     }
 }

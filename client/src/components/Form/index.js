@@ -4,8 +4,8 @@ import React from "react";
 
 export function Dropdown(props) {
   return (
-    <div className="form-group">
-      <select className="form-control" {...props}>
+    <div className="form-group" >
+      <select className="form-control" {...props} style={{ boxShadow: "1.75px 1.75px lightgray" }}>
         <option value="">--Please choose a job type--</option> 
         <option value="Assembly">Assembly</option>
         <option value="Electrical">Electrical</option>
@@ -24,7 +24,7 @@ export function Dropdown(props) {
 export function Input(props) {
   return (
     <div className="form-group">
-      <input className="form-control" {...props} />
+      <input className="form-control" {...props} style={{ boxShadow: "1.75px 1.75px lightgray" }} />
     </div>
   );
 }
@@ -32,7 +32,7 @@ export function Input(props) {
 export function TextArea(props) {
   return (
     <div className="form-group">
-      <textarea className="form-control" rows="20" {...props} />
+      <textarea className="form-control" rows="10" {...props} style={{ boxShadow: "1.75px 1.75px lightgray" }}/>
     </div>
   );
 }
@@ -40,14 +40,14 @@ export function TextArea(props) {
 export function Timeframe(props) {
   return (
     <div className="form-group">
-      <input className="form-control" {...props} />
+      <input className="form-control" {...props} style={{ boxShadow: "1.75px 1.75px lightgray" }} />
     </div>
   );
 }
 
 export function FormBtn(props) {
   return (
-    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
+    <button {...props} style={{ marginBottom: 10, backgroundColor: "#f6c90e", color: "black", borderWidth: "0px", boxShadow: "1.75px 1.75px lightgray" }} className="btn btn-success">
       {props.children}
     </button>
   );

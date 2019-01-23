@@ -6,6 +6,10 @@ import '../App.css';
 import axios from 'axios'
 import './navbar.css'
 
+const imageStyle = {
+  width: "100%"
+}
+
 class Navbar extends Component {
     constructor() {
         super()
@@ -86,6 +90,8 @@ class Navbar extends Component {
 
                         {loggedIn ? (
                             <section className="navbar-section">
+                              <a href="#" class="navbar-left"><img src="https://scontent.fphl2-3.fna.fbcdn.net/v/t1.0-9/50539532_10101749237675719_9101721619386073088_n.jpg?_nc_cat=101&_nc_ht=scontent.fphl2-3.fna&oh=38d5d7a052ab3598bbafaf075ed1be41&oe=5CBCCF18"/></a>
+
                                 <Link to="#" className="btn btn-link text-dark" onClick={this.logout}>
                                 <span className="text-dark">Logout</span></Link>
                                 {/* <Link to="/listings" className="btn btn-link">
@@ -94,7 +100,7 @@ class Navbar extends Component {
                                     <Link to="/Jobs" className="btn btn-link">
                                         <span className="text-dark">Submit a job request</span>
 				                        </Link> */}
-                                    <div> Username: {this.state.username} </div>
+                                    <div> Welcome, {this.state.username}! </div>
 
                             </section>
                         ) : (

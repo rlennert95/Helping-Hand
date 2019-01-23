@@ -12,7 +12,23 @@ import Listings from './Listings/index'
 import Profile from './profile'
 import Logo from '../Images/facebook_cover_photo_2.png'
 
+const contractorStyle = {
+  display: "grid",
+  gridTemplateColumns: "600px 400px",
+  float: "right",
+  paddingTop: "50px",
+  marginRight: "220px"
+  
+}
 
+const clientStyle = {
+  display: "grid",
+  gridTemplateColumns: "600px 400px",
+  float: "right",
+  paddingTop: "50px",
+  marginRight: "220px"
+  
+}
 
 class Home extends Component {
   constructor() {
@@ -105,8 +121,10 @@ class Home extends Component {
       return (
         <div>
           <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
-          <Profile />
-          <Listings />
+            <div className="contractor-wrapper" style={contractorStyle}>
+              <Profile />
+              <Listings />
+            </div>
         </div>
       )
     } else if (this.state.loggedIn == true && this.state.contractor == false) {
@@ -114,8 +132,10 @@ class Home extends Component {
       return (
         <div>
           <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
-          <Profile />
-          <Jobs> </Jobs>
+          <div className="client-wrapper" style={clientStyle}>
+            <Profile />
+            <Jobs> </Jobs>
+          </div>
         </div>
       )
       //INSERT RETURN HERE

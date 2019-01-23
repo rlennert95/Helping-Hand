@@ -2,8 +2,10 @@
   max-height: 545px;
   border: 1px #DDDDDD solid;
   border-radius: 4px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
+  width: 398;
+  box-shadow: 1.75px 1.75px lightgray;
 }
 
 .list-overflow-container ul {
@@ -31,3 +33,4 @@
 .list-overflow-container li:last-child {
   border-bottom: none;
 }
+
