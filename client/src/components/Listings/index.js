@@ -50,7 +50,9 @@ class Listings extends React.Component {
                   <ListItem key={job._id}>
                     <Link to={"/details/" + job._id}>
                       <strong>
-                        {job.jobType}
+
+
+                        JOBTYPE: ICON GOES HERE {job.jobType} TIMEFRAME: {job.timeframe}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteJob(job._id)} />
