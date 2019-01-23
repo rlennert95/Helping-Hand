@@ -5,6 +5,7 @@ import logo from '../logo.svg';
 import '../App.css';
 import axios from 'axios'
 import './navbar.css'
+import Logo from '../Images/facebook_cover_photo_2.png'
 
 const imageStyle = {
   width: "100%"
@@ -90,7 +91,7 @@ class Navbar extends Component {
 
                         {loggedIn ? (
                             <section className="navbar-section">
-                              <a href="#" class="navbar-left"><img src="https://scontent.fphl2-3.fna.fbcdn.net/v/t1.0-9/50539532_10101749237675719_9101721619386073088_n.jpg?_nc_cat=101&_nc_ht=scontent.fphl2-3.fna&oh=38d5d7a052ab3598bbafaf075ed1be41&oe=5CBCCF18"/></a>
+                              {/* <img src={Logo} className="logo" id="main_logo" style={{ width: 400 }} alt="logo" />  */}
 
                                 <Link to="#" className="btn btn-link text-dark" onClick={this.logout}>
                                 <span className="text-dark">Logout</span></Link>
