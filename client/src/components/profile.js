@@ -109,7 +109,7 @@ class Profile extends Component {
                        
                     </div>
                     <div className="desc">Homeowner</div>
-                    <div className="desc">{this.state.first_name} + {this.state.last_name}</div>
+                    <div className="desc">{this.state.first_name} {this.state.last_name}</div>
                     <div className="desc">{this.state.street} </div>
                     <div className="desc">{this.state.city} {this.state.zipcode}</div>
                 </div>
