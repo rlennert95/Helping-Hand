@@ -61,7 +61,7 @@ class Profile extends Component {
                     city: response.data.CurrentUser.city,
                     zipcode: response.data.CurrentUser.zipcode,
                     phone: response.data.CurrentUser.phone,
-                    contractor: true,
+                    contractor: response.data.CurrentUser.contractor,
                     business: response.data.CurrentUser.business
 
                 })
