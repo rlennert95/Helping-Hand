@@ -91,7 +91,7 @@ class LoginForm extends Component {
                                         <span className="input-group-text"><i className="fas fa-key"></i></span>
                                     </div>
                                     <input type="password" className="form-control"
-                                    placeholder="password"
+                                    placeholder="Password"
                                     type="password"
                                     name="password"
                                     value={this.state.password}

@@ -9,7 +9,23 @@ import Logo from '../Images/facebook_cover_photo_2.png'
 import axios from 'axios'
 
 
+const detailStyle = {
+  listStyleType: "none",
+  textAlign: "justify",
+  height: "400px",
+  marginBottom: "0px",
+  marginTop: "50px",
+  marginLeft: "300px",
+  boxShadow: "1.75px 1.75px lightgray"
+}
 
+const button ={
+  marginRight: "490px",
+  marginTop: "25px",
+  color: "black",
+  backgroundColor: "#f6c90e",
+  boxShadow: "1.75px 1.75px lightgray"
+}
 
 class Detail extends Component {
   state = {
@@ -92,41 +108,32 @@ class Detail extends Component {
   render() {
     if (this.state.job.jobType === "Electrical") {
       return (
-        <Container fluid>
-        
+        // <Container fluid>
+        <div>
         
         <div id="top-filler"> <img src={Logo} className="logo" id="main_logo" style={{ width: 200 }} alt="logo" /> 
         
         </div>
 
           <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
-      	
-        {/* <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>
-                Your Selected Job
-              </h1>
-            </Jumbotron>
-          </Col>
-        </Row> */}
         <Row>
           <Col size="md-10 md-offset-1">
           <div >
-      
+      {/* <img src={electric_icon} id="job_icon"/> */}
       </div>
 
-<div class="jumbotron">
-  <h1 class="display-3"> {this.state.job.jobType} <img src={electric_icon} id="job_icon"/> </h1>
-  <p class="lead"> {this.state.job.description} </p>
-  <hr class="my-4"/>
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </p>
-</div>
+          <div class="jumbotron" style={detailStyle}>
+          <h1 class="display-4">Job Details<img src={electric_icon} id="job_icon"/> </h1>
+          <hr class="my-4"/>
+          <p>Job category: {this.state.job.jobType}</p>
+          <p>Job description: {this.state.job.description}</p>
+          <p>Posted by: {this.state.job.first_name} {this.state.job.last_name} (username {this.state.job.username}) </p>
+          <p>Job location: {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
+          <p class="lead">
+          </p>
+          </div>
 
-            <article>
+            {/* <article>
               <h1>Job Details</h1>
                 <ul>
               
@@ -144,10 +151,10 @@ class Detail extends Component {
                   <li>Phone: {this.state.job.phone}</li>
               </ul>
              
-            </article>
+            </article> */}
 
 
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style={button}>
   Accept Job
 </button>
 
@@ -179,7 +186,7 @@ class Detail extends Component {
             <Link to="/">← Back to Profile</Link>
           </Col>
         </Row>
-      </Container>
+        </div>
       )
     } 
     return (
@@ -198,7 +205,7 @@ class Detail extends Component {
           <Col size="md-10 md-offset-1">
 
 
-<div class="card text-center">
+{/* <div class="card text-center">
   <div class="card-header">
     Featured
   </div>
@@ -210,9 +217,9 @@ class Detail extends Component {
   <div class="card-footer text-muted">
     2 days ago
   </div>
-</div>
+</div> */}
 
-            <article>
+            <article style={detailStyle}>
               <h1>Job Details</h1>
                 <ul>
               
