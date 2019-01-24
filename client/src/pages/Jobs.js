@@ -149,13 +149,13 @@ class Jobs extends Component {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Job Accepted!</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Job Posted!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        The customer has been notified that you have accepted the job. Please contact them at
+        The job has been posted! You will recieve an email when your job is accepted by a contractor.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
