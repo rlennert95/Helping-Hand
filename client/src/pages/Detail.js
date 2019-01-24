@@ -123,12 +123,14 @@ class Detail extends Component {
       </div>
 
           <div class="jumbotron" style={detailStyle}>
-          <h1 class="display-4">Job Details<img src={electric_icon} id="job_icon"/> </h1>
+          <h1 class="display-4"><img src={electric_icon} id="job_icon"/> {this.state.job.jobType} </h1>
           <hr class="my-4"/>
-          <p>Job category: {this.state.job.jobType}</p>
-          <p>Job description: {this.state.job.description}</p>
-          <p>Posted by: {this.state.job.first_name} {this.state.job.last_name} (username {this.state.job.username}) </p>
-          <p>Job location: {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
+         
+          <p><b>Job Description:</b> {this.state.job.description}</p>
+          <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
+          <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+          <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
+      
           <p class="lead">
           </p>
           </div>
