@@ -6,6 +6,8 @@ import '../App.css';
 import axios from 'axios'
 import './contractor-home.css'
 import profileicon from '../Images/homeowner.png'
+import hardhat from '../Images/hardhat.png'
+import NoMatch from '../pages/NoMatch';
 
 const style = {
     marginTop: "0px",
@@ -27,7 +29,7 @@ class Profile extends Component {
 			city: '',
 			zipcode: '',
 			phone:'',
-			contractor: true,
+			contractor: null,
 			confirmPassword: '',
 			redirect: false,
 			business: ''
@@ -89,13 +91,8 @@ class Profile extends Component {
 
     render() {
 
-
+        if (this.state.loggedIn == true && this.state.contractor == false) {
         return (
-
-
-          
-	// <div className="row">
-	// 	<div className="col-lg-3 col-sm-6">
         
             <div className="card bg-light mb-3" style={style}>
                 <div className="cardheader">
@@ -116,18 +113,56 @@ class Profile extends Component {
                 <div className="bottom">
                   
                 </div>
-           
-            {/* </div>
-
-        
-        </div> */}
 
 	</div>
-
+    
 
                 );
         
             }
+
+            else if (this.state.loggedIn == true && this.state.contractor == true) {
+                return (
+                
+                    <div className="card bg-light mb-3" style={style}>
+                        <div className="cardheader">
+        
+                        </div>
+                        <div className="avatar">
+                            <img src={hardhat} style={{ width: 200 }} />
+                        </div>
+                        <div className="info">
+                            <div className="title">
+                               
+                            </div>
+                            <div className="desc">Contractor</div>
+                            <div className="desc">{this.state.business}</div>
+                            <div className="desc">{this.state.city}</div>
+                        </div>
+                        <div className="bottom">
+                          
+                        </div>
+        
+            </div>
+            
+        
+                        );
+                
+                    }
+                    else {
+                        return (
+                        <div>
+                        {NoMatch}
+                        
+                        </div>
+                
+                    
+                
+                                );
+                        
+                            }
+
+        }
         }
         
 export default Profile
