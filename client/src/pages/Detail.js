@@ -4,6 +4,14 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import electric_icon from "./icons/electric.png"
+import assembly_icon from "./icons/assembly.png"
+import handyman_icon from "./icons/handyman.png"
+import hvac_icon from "./icons/hvac.png"
+import lawn_icon from "./icons/lawn.png"
+import moving_icon from "./icons/moving.png"
+import paintbrush_icon from "./icons/paintbrush.png"
+import plumbing_icon from "./icons/plumbing.png"
+import tech_icon from "./icons/tech.png"
 import Navbar from '../components/navbar'
 import Logo from '../Images/facebook_cover_photo_2.png'
 import axios from 'axios'
@@ -123,12 +131,12 @@ class Detail extends Component {
       </div>
 
           <div class="jumbotron" style={detailStyle}>
-          <h1 class="display-4">Job Details<img src={electric_icon} id="job_icon"/> </h1>
+          <h1 class="display-4"><img src={electric_icon} id="job_icon"/>Job Details </h1>
           <hr class="my-4"/>
-          <p>Job category: {this.state.job.jobType}</p>
-          <p>Job description: {this.state.job.description}</p>
-          <p>Posted by: {this.state.job.first_name} {this.state.job.last_name} (username {this.state.job.username}) </p>
-          <p>Job location: {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
+          <p><b>Job category: {this.state.job.jobType}</b></p>
+          <p><b>Job description: {this.state.job.description}</b></p>
+          <p><b>Posted by: {this.state.job.first_name} {this.state.job.last_name} (username {this.state.job.username}) </b></p>
+          <p><b>Job location: {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</b></p>
           <p class="lead">
           </p>
           </div>
@@ -189,6 +197,534 @@ class Detail extends Component {
         </div>
       )
     } 
+    else if (this.state.job.jobType === "Assembly") {
+      return (
+        <div>
+          
+          <div id="top-filler"> <img src={Logo} className="logo" id="main_logo" style={{ width: 200 }} alt="logo" /> 
+          
+          </div>
+  
+            <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
+          <Row>
+            <Col size="md-10 md-offset-1">
+            <div >
+        {/* <img src={electric_icon} id="job_icon"/> */}
+        </div>
+  
+            <div class="jumbotron" style={detailStyle}>
+            <h1 class="display-4"><img src={assembly_icon} id="job_icon"/> {this.state.job.jobType} </h1>
+            <hr class="my-4"/>
+           
+            <p><b>Job Description:</b> {this.state.job.description}</p>
+            <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
+            <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+            <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
+        
+            <p class="lead">
+            </p>
+            </div>
+  
+  
+  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style={button}>
+    Accept Job
+  </button>
+  
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Job Accepted!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          The customer has been notified that you have accepted the job. Please contact them at {this.state.job.phone} or {this.state.job.email}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-2">
+              <Link to="/">← Back to Profile</Link>
+            </Col>
+          </Row>
+          </div>
+        )
+      
+    }
+    else if (this.state.job.jobType === "Handyman") {
+      return (
+        <div>
+          
+          <div id="top-filler"> <img src={Logo} className="logo" id="main_logo" style={{ width: 200 }} alt="logo" /> 
+          
+          </div>
+  
+            <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
+          <Row>
+            <Col size="md-10 md-offset-1">
+            <div >
+        {/* <img src={electric_icon} id="job_icon"/> */}
+        </div>
+  
+            <div class="jumbotron" style={detailStyle}>
+            <h1 class="display-4"><img src={handyman_icon} id="job_icon"/> {this.state.job.jobType} </h1>
+            <hr class="my-4"/>
+           
+            <p><b>Job Description:</b> {this.state.job.description}</p>
+            <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
+            <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+            <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
+        
+            <p class="lead">
+            </p>
+            </div>
+  
+  
+  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style={button}>
+    Accept Job
+  </button>
+  
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Job Accepted!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          The customer has been notified that you have accepted the job. Please contact them at {this.state.job.phone} or {this.state.job.email}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-2">
+              <Link to="/">← Back to Profile</Link>
+            </Col>
+          </Row>
+          </div>
+        )
+      
+    }
+    else if (this.state.job.jobType === "HVAC") {
+      return (
+        <div>
+          
+          <div id="top-filler"> <img src={Logo} className="logo" id="main_logo" style={{ width: 200 }} alt="logo" /> 
+          
+          </div>
+  
+            <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
+          <Row>
+            <Col size="md-10 md-offset-1">
+            <div >
+        {/* <img src={electric_icon} id="job_icon"/> */}
+        </div>
+  
+            <div class="jumbotron" style={detailStyle}>
+            <h1 class="display-4"><img src={hvac_icon} id="job_icon"/> {this.state.job.jobType} </h1>
+            <hr class="my-4"/>
+           
+            <p><b>Job Description:</b> {this.state.job.description}</p>
+            <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
+            <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+            <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
+        
+            <p class="lead">
+            </p>
+            </div>
+  
+  
+  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style={button}>
+    Accept Job
+  </button>
+  
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Job Accepted!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          The customer has been notified that you have accepted the job. Please contact them at {this.state.job.phone} or {this.state.job.email}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-2">
+              <Link to="/">← Back to Profile</Link>
+            </Col>
+          </Row>
+          </div>
+        )
+      
+    }
+    else if (this.state.job.jobType === "Yard and lawn") {
+      return (
+        <div>
+          
+          <div id="top-filler"> <img src={Logo} className="logo" id="main_logo" style={{ width: 200 }} alt="logo" /> 
+          
+          </div>
+  
+            <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
+          <Row>
+            <Col size="md-10 md-offset-1">
+            <div >
+        {/* <img src={electric_icon} id="job_icon"/> */}
+        </div>
+  
+            <div class="jumbotron" style={detailStyle}>
+            <h1 class="display-4"><img src={lawn_icon} id="job_icon"/> {this.state.job.jobType} </h1>
+            <hr class="my-4"/>
+           
+            <p><b>Job Description:</b> {this.state.job.description}</p>
+            <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
+            <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+            <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
+        
+            <p class="lead">
+            </p>
+            </div>
+  
+  
+  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style={button}>
+    Accept Job
+  </button>
+  
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Job Accepted!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          The customer has been notified that you have accepted the job. Please contact them at {this.state.job.phone} or {this.state.job.email}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-2">
+              <Link to="/">← Back to Profile</Link>
+            </Col>
+          </Row>
+          </div>
+        )
+      
+    }
+    else if (this.state.job.jobType === "Moving") {
+      return (
+        <div>
+          
+          <div id="top-filler"> <img src={Logo} className="logo" id="main_logo" style={{ width: 200 }} alt="logo" /> 
+          
+          </div>
+  
+            <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
+          <Row>
+            <Col size="md-10 md-offset-1">
+            <div >
+        {/* <img src={electric_icon} id="job_icon"/> */}
+        </div>
+  
+            <div class="jumbotron" style={detailStyle}>
+            <h1 class="display-4"><img src={moving_icon} id="job_icon"/> {this.state.job.jobType} </h1>
+            <hr class="my-4"/>
+           
+            <p><b>Job Description:</b> {this.state.job.description}</p>
+            <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
+            <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+            <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
+        
+            <p class="lead">
+            </p>
+            </div>
+  
+  
+  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style={button}>
+    Accept Job
+  </button>
+  
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Job Accepted!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          The customer has been notified that you have accepted the job. Please contact them at {this.state.job.phone} or {this.state.job.email}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-2">
+              <Link to="/">← Back to Profile</Link>
+            </Col>
+          </Row>
+          </div>
+        )
+      
+    }
+
+    else if (this.state.job.jobType === "Painting") {
+      return (
+        <div>
+          
+          <div id="top-filler"> <img src={Logo} className="logo" id="main_logo" style={{ width: 200 }} alt="logo" /> 
+          
+          </div>
+  
+            <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
+          <Row>
+            <Col size="md-10 md-offset-1">
+            <div >
+        {/* <img src={electric_icon} id="job_icon"/> */}
+        </div>
+  
+            <div class="jumbotron" style={detailStyle}>
+            <h1 class="display-4"><img src={paintbrush_icon} id="job_icon"/> {this.state.job.jobType} </h1>
+            <hr class="my-4"/>
+           
+            <p><b>Job Description:</b> {this.state.job.description}</p>
+            <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
+            <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+            <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
+        
+            <p class="lead">
+            </p>
+            </div>
+  
+  
+  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style={button}>
+    Accept Job
+  </button>
+  
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Job Accepted!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          The customer has been notified that you have accepted the job. Please contact them at {this.state.job.phone} or {this.state.job.email}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-2">
+              <Link to="/">← Back to Profile</Link>
+            </Col>
+          </Row>
+          </div>
+        )
+      
+    }
+
+    else if (this.state.job.jobType === "Plumbing") {
+      return (
+        <div>
+          
+          <div id="top-filler"> <img src={Logo} className="logo" id="main_logo" style={{ width: 200 }} alt="logo" /> 
+          
+          </div>
+  
+            <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
+          <Row>
+            <Col size="md-10 md-offset-1">
+            <div >
+        {/* <img src={electric_icon} id="job_icon"/> */}
+        </div>
+  
+            <div class="jumbotron" style={detailStyle}>
+            <h1 class="display-4"><img src={plumbing_icon} id="job_icon"/> {this.state.job.jobType} </h1>
+            <hr class="my-4"/>
+           
+            <p><b>Job Description:</b> {this.state.job.description}</p>
+            <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
+            <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+            <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
+        
+            <p class="lead">
+            </p>
+            </div>
+  
+  
+  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style={button}>
+    Accept Job
+  </button>
+  
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Job Accepted!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          The customer has been notified that you have accepted the job. Please contact them at {this.state.job.phone} or {this.state.job.email}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-2">
+              <Link to="/">← Back to Profile</Link>
+            </Col>
+          </Row>
+          </div>
+        )
+      
+    }
+    else if (this.state.job.jobType === "Tech") {
+      return (
+        <div>
+          
+          <div id="top-filler"> <img src={Logo} className="logo" id="main_logo" style={{ width: 200 }} alt="logo" /> 
+          
+          </div>
+  
+            <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}> </Navbar>
+          <Row>
+            <Col size="md-10 md-offset-1">
+            <div >
+        {/* <img src={electric_icon} id="job_icon"/> */}
+        </div>
+  
+            <div class="jumbotron" style={detailStyle}>
+            <h1 class="display-4"><img src={tech_icon} id="job_icon"/> {this.state.job.jobType} </h1>
+            <hr class="my-4"/>
+           
+            <p><b>Job Description:</b> {this.state.job.description}</p>
+            <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
+            <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+            <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
+        
+            <p class="lead">
+            </p>
+            </div>
+  
+  
+  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style={button}>
+    Accept Job
+  </button>
+  
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Job Accepted!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          The customer has been notified that you have accepted the job. Please contact them at {this.state.job.phone} or {this.state.job.email}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-2">
+              <Link to="/">← Back to Profile</Link>
+            </Col>
+          </Row>
+          </div>
+        )
+      
+    }
+
+
+
+
+
+
     return (
       <Container fluid>
       	
