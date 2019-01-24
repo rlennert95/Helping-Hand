@@ -24,7 +24,9 @@ const detailStyle = {
  marginBottom: "0px",
  marginTop: "50px",
  marginLeft: "300px",
- boxShadow: "1.75px 1.75px lightgray"
+ boxShadow: "1.75px 1.75px lightgray",
+ 
+
 }
 
 const button ={
@@ -218,7 +220,7 @@ class Detail extends Component {
  
  <p><b>Job Description:</b> {this.state.job.description}</p>
  <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
- <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+ <p><b>Needs Done By:</b> {this.state.job.timeframe}</p>
  <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
  
  <p class="lead">
@@ -283,7 +285,7 @@ class Detail extends Component {
  
  <p><b>Job Description:</b> {this.state.job.description}</p>
  <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
- <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+ <p><b>Needs Done By:</b> {this.state.job.timeframe}</p>
  <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
  
  <p class="lead">
@@ -348,7 +350,7 @@ class Detail extends Component {
  
  <p><b>Job Description:</b> {this.state.job.description}</p>
  <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
- <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+ <p><b>Needs Done By:</b> {this.state.job.timeframe}</p>
  <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
  
  <p class="lead">
@@ -413,7 +415,7 @@ class Detail extends Component {
  
  <p><b>Job Description:</b> {this.state.job.description}</p>
  <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
- <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+ <p><b>Needs Done By:</b> {this.state.job.timeframe}</p>
  <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
  
  <p class="lead">
@@ -478,7 +480,7 @@ class Detail extends Component {
  
  <p><b>Job Description:</b> {this.state.job.description}</p>
  <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
- <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+ <p><b>Needs Done By:</b> {this.state.job.timeframe}</p>
  <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
  
  <p class="lead">
@@ -544,7 +546,7 @@ class Detail extends Component {
  
  <p><b>Job Description:</b> {this.state.job.description}</p>
  <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
- <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+ <p><b>Needs Done By:</b> {this.state.job.timeframe}</p>
  <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
  
  <p class="lead">
@@ -610,7 +612,7 @@ class Detail extends Component {
  
  <p><b>Job Description:</b> {this.state.job.description}</p>
  <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
- <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+ <p><b>Needs Done By:</b> {this.state.job.timeframe}</p>
  <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
  
  <p class="lead">
@@ -675,7 +677,7 @@ class Detail extends Component {
  
  <p><b>Job Description:</b> {this.state.job.description}</p>
  <p><b>Job Location:</b> {this.state.job.street}, {this.state.job.city} {this.state.job.zipcode}</p>
- <p><b>Needs Done By:</b> {this.state.timeframe}</p>
+ <p><b>Needs Done By:</b> {this.state.job.timeframe}</p>
  <p><b>Posted By:</b> {this.state.job.first_name} {this.state.job.last_name} </p>
  
  <p class="lead">

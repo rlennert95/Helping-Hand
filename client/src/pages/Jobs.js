@@ -155,7 +155,7 @@ class Jobs extends Component {
         </button>
       </div>
       <div class="modal-body">
-        The job has been posted! You will recieve an email when your job is accepted by a contractor.
+        The job has been posted! A contractor will be in touch with you shortly.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
