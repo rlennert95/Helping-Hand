@@ -17,7 +17,7 @@ const contractorStyle = {
   gridTemplateColumns: "600px 400px",
   float: "right",
   paddingTop: "50px",
-  marginRight: "220px"
+  marginRight: "225px"
   
 }
 
@@ -26,7 +26,7 @@ const clientStyle = {
   gridTemplateColumns: "600px 400px",
   float: "right",
   paddingTop: "50px",
-  marginRight: "220px"
+  marginRight: "225px"
   
 }
 

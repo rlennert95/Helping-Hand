@@ -12,7 +12,10 @@ import Navbar from "../components/navbar";
 import './job-form.css'
 
 const buttonStyle = {
-  float: "none"
+  backgroundColor: "#f6c90e",
+  borderColor: "#f6c90e",
+  color: "black",
+  boxShadow: "1.75px 1.75px lightgray"
 }
 
 class Jobs extends Component {
@@ -137,8 +140,8 @@ class Jobs extends Component {
                 placeholder="How soon do you need it done? (required)"
               />
 
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"  onClick={this.handleFormSubmit}>
- POSTIN JOBS
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style={buttonStyle}  onClick={this.handleFormSubmit}>
+ Post job
 </button>
 
 
@@ -162,16 +165,15 @@ class Jobs extends Component {
   </div>
 </div>
 
-              <FormBtn
-                // disabled={!(this.state.author && this.state.title)}
+              {/* <FormBtn
+                
                 style={buttonStyle}
                 onClick={this.handleFormSubmit}
               >
                 Submit job request
-              </FormBtn>
+              </FormBtn> */}
             </form>
-          {/* </Col>
-        </Row> */}
+
       </Container>
      
     );
