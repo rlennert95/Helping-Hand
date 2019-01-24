@@ -5,6 +5,7 @@ import logo from '../logo.svg';
 import '../App.css';
 import axios from 'axios'
 import './contractor-home.css'
+import profileicon from '../Images/homeowner.png'
 
 const style = {
     marginTop: "0px",
@@ -19,6 +20,17 @@ class Profile extends Component {
         super()
         this.state = {
             username: null,
+            email: '',
+			first_name: '',
+			last_name:'',
+			street: '',
+			city: '',
+			zipcode: '',
+			phone:'',
+			contractor: true,
+			confirmPassword: '',
+			redirect: false,
+			business: ''
         }
     }
 
@@ -40,6 +52,15 @@ class Profile extends Component {
                 this.setState({
                     loggedIn: true,
                     username: response.data.CurrentUser.username,
+                    email: response.data.CurrentUser.email,
+                    first_name: response.data.CurrentUser.first_name,
+                    last_name: response.data.CurrentUser.last_name,
+                    street: response.data.CurrentUser.street,
+                    city: response.data.CurrentUser.city,
+                    zipcode: response.data.CurrentUser.zipcode,
+                    phone: response.data.CurrentUser.phone,
+                    contractor: true,
+                    business: response.data.CurrentUser.business
 
                 })
             } else {
@@ -81,31 +102,19 @@ class Profile extends Component {
 
                 </div>
                 <div className="avatar">
-                    <img alt="" src="http://lorempixel.com/100/100/people/9/"/>
+                    <img src={profileicon} style={{ width: 200 }} />
                 </div>
                 <div className="info">
                     <div className="title">
-                        <a target="_blank" href="https://scripteden.com/">Script Eden</a>
+                       
                     </div>
-                    <div className="desc">Passionate designer</div>
-                    <div className="desc">Curious developer</div>
-                    <div className="desc">Tech geek</div>
+                    <div className="desc">Homeowner</div>
+                    <div className="desc">{this.state.first_name} + {this.state.last_name}</div>
+                    <div className="desc">{this.state.street} </div>
+                    <div className="desc">{this.state.city} {this.state.zipcode}</div>
                 </div>
                 <div className="bottom">
-                    <a className="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
-                        <i className="fa fa-twitter"></i>
-                    </a>
-                    <a className="btn btn-danger btn-sm" rel="publisher"
-                       href="https://plus.google.com/+ahmshahnuralam">
-                        <i className="fa fa-google-plus"></i>
-                    </a>
-                    <a className="btn btn-primary btn-sm" rel="publisher"
-                       href="https://plus.google.com/shahnuralam">
-                        <i className="fa fa-facebook"></i>
-                    </a>
-                    <a className="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
-                        <i className="fa fa-behance"></i>
-                    </a>
+                  
                 </div>
            
             {/* </div>
