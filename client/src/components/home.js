@@ -11,6 +11,10 @@ import Detail from '../pages/Detail';
 import Listings from './Listings/index'
 import Profile from './profile'
 import Logo from '../Images/facebook_cover_photo_2.png'
+import img1 from '../Images/home1test2.jpg'
+import img2 from '../Images/home2test2.jpg'
+import img3 from '../Images/home4test.jpg'
+
 
 const contractorStyle = {
   display: "grid",
@@ -172,13 +176,13 @@ class Home extends Component {
 
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img src="https://www.concrete.org/portals/0/files/images/contractorportal_12column.jpg" alt="Los Angeles" width="100%" height="100%" />
+              <img src={img1} alt="Los Angeles" width="100%" height="100%" />
             </div>
             <div className="carousel-item">
-              <img src="http://lenoxhillconstruction.com/wp-content/uploads/2016/03/General-Contractor-1024x683.jpg" alt="Chicago" width="100%" height="100%" />
+              <img src={img2} alt="Chicago" width="100%" height="100%" />
             </div>
             <div className="carousel-item">
-              <img src="https://www.cm3.com.au/www/responsive/images/frontpage/for-clients.jpg" alt="New York" width="100%" height="100%" />
+              <img src={img3} alt="New York" width="100%" height="100%" />
             </div>
           </div>
 
